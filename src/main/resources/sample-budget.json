@@ -1,0 +1,30 @@
+{
+  "payPeriods": [
+    {
+      "seqNbr": 1,
+      "budgetEntries": [
+        {
+          "direction": "I",
+          "type": "paycheck",
+          "expectedAmount": 2500.00,
+          "description": "Main paycheck from employer",
+          "matchKey": "PAYROLL-001"
+        },
+        {
+          "direction": "E",
+          "type": "bill",
+          "expectedAmount": 1200.00,
+          "description": "Monthly rent payment",
+          "matchKey": "RENT-DEC"
+        },
+        {
+          "direction": "E",
+          "type": "savingsTransfer",
+          "expectedAmount": 300.00,
+          "description": "Transfer to savings account",
+          "matchKey": "SAV-DEC"
+        }
+      ]
+    }
+  ]
+}
