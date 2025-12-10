@@ -1,8 +1,9 @@
 # Compiled class file
 *.class
 
-# Log file
+# Log files
 *.log
+logs/
 
 # BlueJ files
 *.ctxt
@@ -10,7 +11,7 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.nar
@@ -19,7 +20,83 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Gradle cache and build directories
+.gradle/
+/build/
+
+# Gradle wrapper distribution caches
+.gradle-cache/
+
+# Gradle wrapper jar (committed typically) - do not ignore gradle/wrapper/gradle-wrapper.jar unless you prefer to
+
+# IntelliJ IDEA
+/.idea/
+*.iml
+*.iws
+.idea_modules/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+/target/
+
+# Generated files
+/out/
+/generated/
+
+# Test and reports
+/build/reports/
+/build/test-results/
+/test-output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# JVM crash logs
 hs_err_pid*
 replay_pid*
-.idea
+
+# Environment / secrets
+.env
+.env.*
+*.jks
+*.keystore
+
+# Misc
+*.tmp
+*.swp
+*~
+
+# IDE-specific metadata
+/.idea/
+*.iml
+
+# Ignore IDE workspace files
+/.idea/workspace.xml
+/.idea/tasks.xml
+
+# Ignore IntelliJ run configurations
+/.idea/runConfigurations/
+
+# Ignore local Gradle properties
+/local.properties
+
+# Ignore build system directories
+.gradle/
+build/
+
+# Ignore logs created by tools
+*.log
+
+# Ignore macOS Finder attributes
+.AppleDouble
+.LSOverride
+
+# End of list

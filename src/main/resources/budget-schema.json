@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Budget",
+  "description": "Represents a monthly budget model consisting of pay periods and their associated entries.",
+  "type": "object",
+  "properties": {
+    "payPeriods": {
+      "type": "array",
+      "description": "List of pay periods within the budget month.",
+      "items": {
+        "$ref": "#/$defs/PayPeriodBudget"
+      }
+    }
+  },
+  "required": ["payPeriods"],
+  "$defs": {
+    "PayPeriodBudget": {
+      "type": "object",
+      "description": "Budget details for a specific pay period in the month.",
+      "properties": {
+        "seqNbr": {
+          "type": "integer",
+          "description": "Sequence number of the pay period within the month (e.g., 1 for first pay period)."
+        },
+        "budgetEntries": {
+          "type": "array",
+          "description": "List of budget entries (income or expenses) for this pay period.",
+          "items": {
+            "$ref": "#/$defs/BudgetEntry"
+          }
+        }
+      },
+      "required": ["seqNbr", "budgetEntries"]
+    },
+    "BudgetEntry": {
+      "type": "object",
+      "description": "Represents a single budget entry, such as income or expense.",
+      "properties": {
+        "direction": {
+          "type": "string",
+          "enum": ["I", "E"],
+          "description": "Indicates whether the entry is income ('I') or expense ('E')."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["paycheck", "bill", "savingsTransfer"],
+          "description": "Categorization of the entry, e.g., paycheck, bill, or savings transfer."
+        },
+        "expectedAmount": {
+          "type": "number",
+          "description": "Expected monetary amount for this entry."
+        },
+        "description": {
+          "type": "string",
+          "description": "Free-form text description of the entry (e.g., 'Electric bill for December')."
+        },
+        "matchKey": {
+          "type": "string",
+          "description": "Text field used to match this entry against a transaction in the bank statement (e.g., 'ACH-12345')."
+        }
+      },
+      "required": ["direction", "type", "expectedAmount", "description", "matchKey"]
+    }
+  }
+}
